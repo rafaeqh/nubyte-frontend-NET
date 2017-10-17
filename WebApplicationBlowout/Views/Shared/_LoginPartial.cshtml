@@ -1,0 +1,58 @@
+﻿
+@if (Session["login"].ToString().Equals("1"))
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            @Html.ActionLink("Hola " + Session["Nombre"].ToString() + " !", "Index", "Admin", routeValues: null, htmlAttributes: new { title = "Manage" })
+            
+        </li>
+        <li>@Html.ActionLink("Cerrar Sesion", "CerrarSesion", "Admin")</li>
+        
+            
+        
+    </ul>
+       
+
+
+    }
+}
+
+@if (Session["login"].ToString().Equals("2"))
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                @Html.ActionLink("Hola " + Session["Nombre"].ToString() + " !", "Index", "Operador", routeValues: null, htmlAttributes: new { title = "Manage" })
+
+            </li>
+            <li>@Html.ActionLink("Cerrar Sesion", "CerrarSesion", "Admin")</li>
+
+
+
+        </ul>
+      
+
+
+    }
+
+
+}
+@if(Session["login"].ToString().Equals("0"))
+{
+
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Registrarse", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Iniciar sesión", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+
+ 
+
+}
+

@@ -1,0 +1,99 @@
+﻿@model IEnumerable<WebApplicationBlowout.Models.segmentacion>
+
+@{
+    ViewBag.Title = "Segmentación";
+}
+
+<h2>Segmentación</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cluster)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clientes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Compras)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Facturas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PromCompras)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PromEdad)
+        </th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cluster)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Clientes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Compras)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Facturas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PromCompras)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PromEdad)
+        </td>
+        <td>
+            <div class="form-group">
+                <div class="btn btn-default">
+                   @Html.ActionLink("Crear Promoción", "CrearPromocion", "Admin") 
+                </div>
+            </div>
+        </td>
+      
+    </tr>
+}
+
+</table>
+
+<div class="center-block text-center">
+<br />
+<h2>Análisis de la segmentación por Cluster</h2>
+<h1><img src="@Url.Content("~/Imagenes/Final.png")" width="650px" height="500px" alt="imgf" /></h1>
+<br />
+<h2>Distribución de los datos obtenidos por Cluster</h2>
+<div class="row">
+    <div class="col-md-4">
+        <p class="lead">Cantidad de clientes</p>
+        <h3><img src="@Url.Content("~/Imagenes/DistriNClientes.png")" width="480px" height="300px" alt="imgf" /></h3>
+    </div>
+    <div class="col-md-4">
+        <p class="lead">Precio de compras</p>
+        <h3><img src="@Url.Content("~/Imagenes/DistriTotalComprado.png")" width="480px" height="300px" alt="imgf" /></h3>
+    </div>
+    <div class="col-md-4">
+        <p class="lead">Cantidad número compras</p>
+        <h3><img src="@Url.Content("~/Imagenes/DistriNCompra.png")" width="480px" height="300px" alt="imgf" /></h3>
+    </div>
+</div>
+<br />
+<h2>Análisis de los promedios por Cluster</h2>
+<div class="row">
+    <div class="col-md-6">
+        <p class="lead">Total compra</p>
+        <h3><img src="@Url.Content("~/Imagenes/PromCompra.png")" width="500px" height="400px" alt="imgf" /></h3>
+    </div>
+    <div class="col-md-6">
+        <p class="lead">Edad</p>
+        <h3><img src="@Url.Content("~/Imagenes/PromEdad.png")" width="500px" height="400px" alt="imgf" /></h3>
+    </div>
+</div>
+</div>
+
+

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<WebApplicationBlowout.Models.OperadorViewModel>
+
+@{
+    ViewBag.Title = "ListaOperadores";
+}
+
+<h2>Lista Operadores</h2>
+
+<p>
+    @Html.ActionLink("Crear Operador", "Register","Admin")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cedula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cedula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Modificar" class="btn btn-default" />
+                    <input type="submit" value="Eliminar" class="btn btn-default" />
+                </div>
+            </div>
+           
+        </td>
+    </tr>
+}
+
+</table>

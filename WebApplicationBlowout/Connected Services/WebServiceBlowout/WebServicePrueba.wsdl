@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://Servicios/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="WebServicePrueba" targetNamespace="http://Servicios/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://25.11.73.18:8080/WebServicePrueba/WebServicePrueba?xsd=1" namespace="http://Servicios/" />
+    </xsd:schema>
+  </types>
+  <message name="remove">
+    <part name="parameters" element="tns:remove" />
+  </message>
+  <message name="count">
+    <part name="parameters" element="tns:count" />
+  </message>
+  <message name="countResponse">
+    <part name="parameters" element="tns:countResponse" />
+  </message>
+  <message name="find">
+    <part name="parameters" element="tns:find" />
+  </message>
+  <message name="findResponse">
+    <part name="parameters" element="tns:findResponse" />
+  </message>
+  <message name="create">
+    <part name="parameters" element="tns:create" />
+  </message>
+  <message name="findAll">
+    <part name="parameters" element="tns:findAll" />
+  </message>
+  <message name="findAllResponse">
+    <part name="parameters" element="tns:findAllResponse" />
+  </message>
+  <message name="login">
+    <part name="parameters" element="tns:login" />
+  </message>
+  <message name="loginResponse">
+    <part name="parameters" element="tns:loginResponse" />
+  </message>
+  <message name="listarEstablecimientos">
+    <part name="parameters" element="tns:listarEstablecimientos" />
+  </message>
+  <message name="listarEstablecimientosResponse">
+    <part name="parameters" element="tns:listarEstablecimientosResponse" />
+  </message>
+  <message name="pedirInfoSegmentacion">
+    <part name="parameters" element="tns:pedirInfoSegmentacion" />
+  </message>
+  <message name="pedirInfoSegmentacionResponse">
+    <part name="parameters" element="tns:pedirInfoSegmentacionResponse" />
+  </message>
+  <message name="listaProductosEst">
+    <part name="parameters" element="tns:listaProductosEst" />
+  </message>
+  <message name="listaProductosEstResponse">
+    <part name="parameters" element="tns:listaProductosEstResponse" />
+  </message>
+  <message name="listaFuncionarios">
+    <part name="parameters" element="tns:listaFuncionarios" />
+  </message>
+  <message name="listaFuncionariosResponse">
+    <part name="parameters" element="tns:listaFuncionariosResponse" />
+  </message>
+  <message name="loginApp">
+    <part name="parameters" element="tns:loginApp" />
+  </message>
+  <message name="loginAppResponse">
+    <part name="parameters" element="tns:loginAppResponse" />
+  </message>
+  <message name="findRange">
+    <part name="parameters" element="tns:findRange" />
+  </message>
+  <message name="findRangeResponse">
+    <part name="parameters" element="tns:findRangeResponse" />
+  </message>
+  <message name="crearCuentaApp">
+    <part name="parameters" element="tns:crearCuentaApp" />
+  </message>
+  <message name="crearCuentaAppResponse">
+    <part name="parameters" element="tns:crearCuentaAppResponse" />
+  </message>
+  <message name="crearCuenta">
+    <part name="parameters" element="tns:crearCuenta" />
+  </message>
+  <message name="crearCuentaResponse">
+    <part name="parameters" element="tns:crearCuentaResponse" />
+  </message>
+  <message name="reglasAsociacion">
+    <part name="parameters" element="tns:reglasAsociacion" />
+  </message>
+  <message name="reglasAsociacionResponse">
+    <part name="parameters" element="tns:reglasAsociacionResponse" />
+  </message>
+  <message name="crearReserva">
+    <part name="parameters" element="tns:crearReserva" />
+  </message>
+  <message name="crearReservaResponse">
+    <part name="parameters" element="tns:crearReservaResponse" />
+  </message>
+  <message name="edit">
+    <part name="parameters" element="tns:edit" />
+  </message>
+  <message name="listaReservas">
+    <part name="parameters" element="tns:listaReservas" />
+  </message>
+  <message name="listaReservasResponse">
+    <part name="parameters" element="tns:listaReservasResponse" />
+  </message>
+  <message name="pedirPuntos">
+    <part name="parameters" element="tns:pedirPuntos" />
+  </message>
+  <message name="pedirPuntosResponse">
+    <part name="parameters" element="tns:pedirPuntosResponse" />
+  </message>
+  <message name="crearPromo">
+    <part name="parameters" element="tns:crearPromo" />
+  </message>
+  <message name="crearPromoResponse">
+    <part name="parameters" element="tns:crearPromoResponse" />
+  </message>
+  <message name="asignarPuntos">
+    <part name="parameters" element="tns:asignarPuntos" />
+  </message>
+  <message name="asignarPuntosResponse">
+    <part name="parameters" element="tns:asignarPuntosResponse" />
+  </message>
+  <message name="listarPromos">
+    <part name="parameters" element="tns:listarPromos" />
+  </message>
+  <message name="listarPromosResponse">
+    <part name="parameters" element="tns:listarPromosResponse" />
+  </message>
+  <portType name="WebServicePrueba">
+    <operation name="remove">
+      <input wsam:Action="http://Servicios/WebServicePrueba/remove" message="tns:remove" />
+    </operation>
+    <operation name="count">
+      <input wsam:Action="http://Servicios/WebServicePrueba/countRequest" message="tns:count" />
+      <output wsam:Action="http://Servicios/WebServicePrueba/countResponse" message="tns:countResponse" />
+    </operation>
+    <operation name="find">
+      <input wsam:Action="http://Servicios/WebServicePrueba/findRequest" message="tns:find" />
+      <output wsam:Action="http://Servicios/WebServicePrueba/findResponse" message="tns:findResponse" />
+    </operation>
+    <operation name="create">
+      <input wsam:Action="http://Servicios/WebServicePrueba/create" message="tns:create" />
+    </operation>
+    <operation name="findAll">
+      <input wsam:Action="http://Servicios/WebServicePrueba/findAllRequest" message="tns:findAll" />
+      <output wsam:Action="http://Servicios/WebServicePrueba/findAllResponse" message="tns:findAllResponse" />
+    </operation>
+    <operation name="login">
+      <input wsam:Action="http://Servicios/WebServicePrueba/loginRequest" message="tns:login" />
+      <output wsam:Action="http://Servicios/WebServicePrueba/loginResponse" message="tns:loginResponse" />
+    </operation>
+    <operation name="listarEstablecimientos">
+      <input wsam:Action="http://Servicios/WebServicePrueba/listarEstablecimientosRequest" message="tns:listarEstablecimientos" />
+      <output wsam:Action="http://Servicios/WebServicePrueba/listarEstablecimientosResponse" message="tns:listarEstablecimientosResponse" />
+    </operation>
+    <operation name="pedirInfoSegmentacion">
+      <input wsam:Action="http://Servicios/WebServicePrueba/pedirInfoSegmentacionRequest" message="tns:pedirInfoSegmentacion" />
+      <output wsam:Action="http://Servicios/WebServicePrueba/pedirInfoSegmentacionResponse" message="tns:pedirInfoSegmentacionResponse" />
+    </operation>
+    <operation name="listaProductosEst">
+      <input wsam:Action="http://Servicios/WebServicePrueba/listaProductosEstRequest" message="tns:listaProductosEst" />
+      <output wsam:Action="http://Servicios/WebServicePrueba/listaProductosEstResponse" message="tns:listaProductosEstResponse" />
+    </operation>
+    <operation name="listaFuncionarios">
+      <input wsam:Action="http://Servicios/WebServicePrueba/listaFuncionariosRequest" message="tns:listaFuncionarios" />
+      <output wsam:Action="http://Servicios/WebServicePrueba/listaFuncionariosResponse" message="tns:listaFuncionariosResponse" />
+    </operation>
+    <operation name="loginApp">
+      <input wsam:Action="http://Servicios/WebServicePrueba/loginAppRequest" message="tns:loginApp" />
+      <output wsam:Action="http://Servicios/WebServicePrueba/loginAppResponse" message="tns:loginAppResponse" />
+    </operation>
+    <operation name="findRange">
+      <input wsam:Action="http://Servicios/WebServicePrueba/findRangeRequest" message="tns:findRange" />
+      <output wsam:Action="http://Servicios/WebServicePrueba/findRangeResponse" message="tns:findRangeResponse" />
+    </operation>
+    <operation name="crearCuentaApp">
+      <input wsam:Action="http://Servicios/WebServicePrueba/crearCuentaAppRequest" message="tns:crearCuentaApp" />
+      <output wsam:Action="http://Servicios/WebServicePrueba/crearCuentaAppResponse" message="tns:crearCuentaAppResponse" />
+    </operation>
+    <operation name="crearCuenta">
+      <input wsam:Action="http://Servicios/WebServicePrueba/crearCuentaRequest" message="tns:crearCuenta" />
+      <output wsam:Action="http://Servicios/WebServicePrueba/crearCuentaResponse" message="tns:crearCuentaResponse" />
+    </operation>
+    <operation name="reglasAsociacion">
+      <input wsam:Action="http://Servicios/WebServicePrueba/reglasAsociacionRequest" message="tns:reglasAsociacion" />
+      <output wsam:Action="http://Servicios/WebServicePrueba/reglasAsociacionResponse" message="tns:reglasAsociacionResponse" />
+    </operation>
+    <operation name="crearReserva">
+      <input wsam:Action="http://Servicios/WebServicePrueba/crearReservaRequest" message="tns:crearReserva" />
+      <output wsam:Action="http://Servicios/WebServicePrueba/crearReservaResponse" message="tns:crearReservaResponse" />
+    </operation>
+    <operation name="edit">
+      <input wsam:Action="http://Servicios/WebServicePrueba/edit" message="tns:edit" />
+    </operation>
+    <operation name="listaReservas">
+      <input wsam:Action="http://Servicios/WebServicePrueba/listaReservasRequest" message="tns:listaReservas" />
+      <output wsam:Action="http://Servicios/WebServicePrueba/listaReservasResponse" message="tns:listaReservasResponse" />
+    </operation>
+    <operation name="pedirPuntos">
+      <input wsam:Action="http://Servicios/WebServicePrueba/pedirPuntosRequest" message="tns:pedirPuntos" />
+      <output wsam:Action="http://Servicios/WebServicePrueba/pedirPuntosResponse" message="tns:pedirPuntosResponse" />
+    </operation>
+    <operation name="crearPromo">
+      <input wsam:Action="http://Servicios/WebServicePrueba/crearPromoRequest" message="tns:crearPromo" />
+      <output wsam:Action="http://Servicios/WebServicePrueba/crearPromoResponse" message="tns:crearPromoResponse" />
+    </operation>
+    <operation name="asignarPuntos">
+      <input wsam:Action="http://Servicios/WebServicePrueba/asignarPuntosRequest" message="tns:asignarPuntos" />
+      <output wsam:Action="http://Servicios/WebServicePrueba/asignarPuntosResponse" message="tns:asignarPuntosResponse" />
+    </operation>
+    <operation name="listarPromos">
+      <input wsam:Action="http://Servicios/WebServicePrueba/listarPromosRequest" message="tns:listarPromos" />
+      <output wsam:Action="http://Servicios/WebServicePrueba/listarPromosResponse" message="tns:listarPromosResponse" />
+    </operation>
+  </portType>
+  <binding name="WebServicePruebaPortBinding" type="tns:WebServicePrueba">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="remove">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="count">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="find">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="create">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="findAll">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="login">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarEstablecimientos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="pedirInfoSegmentacion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listaProductosEst">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listaFuncionarios">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="loginApp">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findRange">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="crearCuentaApp">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="crearCuenta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="reglasAsociacion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="crearReserva">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="edit">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="listaReservas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="pedirPuntos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="crearPromo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="asignarPuntos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarPromos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="WebServicePrueba">
+    <port name="WebServicePruebaPort" binding="tns:WebServicePruebaPortBinding">
+      <soap:address location="http://25.11.73.18:8080/WebServicePrueba/WebServicePrueba" />
+    </port>
+  </service>
+</definitions>

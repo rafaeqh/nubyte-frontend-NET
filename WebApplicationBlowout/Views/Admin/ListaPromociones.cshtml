@@ -1,0 +1,59 @@
+﻿@model IEnumerable<WebApplicationBlowout.Models.Promocion>
+
+@{
+    ViewBag.Title = "ListaPromociones";
+}
+
+<h2>Lista Promociones</h2>
+
+<p>
+    @Html.ActionLink("Crear Promoción", "CrearPromocion", "Admin")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreProducto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Precio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaF)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreProducto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Precio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaF)
+        </td>
+        <td>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <div class="btn btn-default">
+                        @Html.ActionLink("Ver Productos", "ListaProductos", "Admin")
+                        </div>
+                        <input type="submit" value="Modificar" class="btn btn-default" />
+                        <input type="submit" value="Eliminar" class="btn btn-default" />
+                    </div>
+
+            </div>
+            
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,8 @@
+﻿
+@{
+    ViewBag.Title = "SelectListaProductos";
+}
+
+<h2>Seleccione los productos de la promoción</h2>
+
+@Html.DropDownList("Productos", ViewBag.CrearPromocion as SelectList, "Productos")

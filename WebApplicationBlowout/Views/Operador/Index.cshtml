@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Home Page Operador";
+}
+
+<div class="center-block text-center">
+    <h1><img src="@Url.Content("~/Imagenes/opera.png")"width="200px" height="200px" alt="imgf" />
+        <img src="@Url.Content("~/Imagenes/dembow.png")" width="200px" height="200px" alt="imgf" /></h1>
+    <p class="lead">Bienvenido @Session["Nombre"].ToString() operador de Dembow</p>
+    
+</div>
+
+<div class="row" >
+    <div class="col-md-4">
+        <h2>Gestionar reservas</h2>
+        <p>
+            Puedes crear, modificar, eliminar y hacer validas las reservas de los clientes.
+        </p>
+        <p><a class="btn btn-default" @Html.ActionLink("Crear Reserva", "CrearReserva", "Operador", routeValues: null, htmlAttributes: new { id = "ReservaLink" }) </a></p>
+        <p><a class="btn btn-default" @Html.ActionLink("Lista Reservas", "ListaReservas", "Operador", routeValues: null, htmlAttributes: new { id = "ReservaLink" }) </a></p>
+
+    </div>
+    <div class="col-md-4">
+        <h2>Ingresar comprar</h2>
+        <p>Ingresar las comprar realizadas por los clinetes para generarles puntos de fidelidad</p>
+        <p><a class="btn btn-default" @Html.ActionLink("Compra", "Compra", "Operador", routeValues: null, htmlAttributes: new { id = "registerLink" }) </a></p>
+ 
+    </div>
+    <div class="col-md-4">
+        <h2>Promociones</h2>
+        <p>Visualiza las promociones actuales y cajealas por puntos de fidelidad de los Clientes</p>
+        <p><a class="btn btn-default" @Html.ActionLink("Promociones", "ListaPromociones", "Operador", routeValues: null, htmlAttributes: new { id = "registerLink" }) </a></p>
+
+    </div>
+   
+</div>

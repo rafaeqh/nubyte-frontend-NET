@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="center-block text-center">
+    <h1><img src="@Url.Content("~/Imagenes/LogoBlowout.png")"width="300px" height="300px" alt="imgf" /></h1>
+    <p class="lead">Sistema que analiza los hábitos de consumo de los clientes en el sector de bares y restaurantes</p>
+    
+</div>
+
+<div class="row" >
+    <div class="col-md-4">
+        <h2>Segmentación</h2>
+        <p>
+            Analiza las caracteristicas y comportamientos de sus clientes
+        </p>
+       
+    </div>
+    <div class="col-md-4">
+        <h2>Reglas de asociación</h2>
+        <p>Descubre hechos en común dentro de la relación de los datos (compras) que generan sus clientes</p>
+ 
+    </div>
+    <div class="col-md-4">
+        <h2>Crear Cuenta</h2>
+        <p>Crear una cuenta como administrador y prueba los beneficios de conocer los hábitos de consumo de tus clientes</p>
+        <p><a class="btn btn-default"@Html.ActionLink("Registrarse", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" }) </a></p>
+    </div>
+</div>
+
+<

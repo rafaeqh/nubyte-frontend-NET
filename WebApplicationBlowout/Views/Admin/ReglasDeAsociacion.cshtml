@@ -1,0 +1,51 @@
+﻿@model IEnumerable<WebApplicationBlowout.Models.ReglaAsociacion>
+
+@{
+    ViewBag.Title = "ReglasDeAsociacion";
+}
+
+<h2>Reglas de Asociación</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroPremisa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Premisa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Conclusion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Confianza)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroPremisa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Premisa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Conclusion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Confianza)
+        </td>
+        <td>
+        <div class="form-group">
+            <div class="btn btn-default">
+                @Html.ActionLink("Crear Promoción", "CrearPromocionRegla", "Admin")
+            </div>
+        </div>
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://Servicios/" targetNamespace="http://Servicios/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="asignarPuntos" type="tns:asignarPuntos" />
+  <xs:element name="asignarPuntosResponse" type="tns:asignarPuntosResponse" />
+  <xs:element name="count" type="tns:count" />
+  <xs:element name="countResponse" type="tns:countResponse" />
+  <xs:element name="crearCuenta" type="tns:crearCuenta" />
+  <xs:element name="crearCuentaApp" type="tns:crearCuentaApp" />
+  <xs:element name="crearCuentaAppResponse" type="tns:crearCuentaAppResponse" />
+  <xs:element name="crearCuentaResponse" type="tns:crearCuentaResponse" />
+  <xs:element name="crearPromo" type="tns:crearPromo" />
+  <xs:element name="crearPromoResponse" type="tns:crearPromoResponse" />
+  <xs:element name="crearReserva" type="tns:crearReserva" />
+  <xs:element name="crearReservaResponse" type="tns:crearReservaResponse" />
+  <xs:element name="create" type="tns:create" />
+  <xs:element name="edit" type="tns:edit" />
+  <xs:element name="find" type="tns:find" />
+  <xs:element name="findAll" type="tns:findAll" />
+  <xs:element name="findAllResponse" type="tns:findAllResponse" />
+  <xs:element name="findRange" type="tns:findRange" />
+  <xs:element name="findRangeResponse" type="tns:findRangeResponse" />
+  <xs:element name="findResponse" type="tns:findResponse" />
+  <xs:element name="listaFuncionarios" type="tns:listaFuncionarios" />
+  <xs:element name="listaFuncionariosResponse" type="tns:listaFuncionariosResponse" />
+  <xs:element name="listaProductosEst" type="tns:listaProductosEst" />
+  <xs:element name="listaProductosEstResponse" type="tns:listaProductosEstResponse" />
+  <xs:element name="listaReservas" type="tns:listaReservas" />
+  <xs:element name="listaReservasResponse" type="tns:listaReservasResponse" />
+  <xs:element name="listarEstablecimientos" type="tns:listarEstablecimientos" />
+  <xs:element name="listarEstablecimientosResponse" type="tns:listarEstablecimientosResponse" />
+  <xs:element name="listarPromos" type="tns:listarPromos" />
+  <xs:element name="listarPromosResponse" type="tns:listarPromosResponse" />
+  <xs:element name="login" type="tns:login" />
+  <xs:element name="loginApp" type="tns:loginApp" />
+  <xs:element name="loginAppResponse" type="tns:loginAppResponse" />
+  <xs:element name="loginResponse" type="tns:loginResponse" />
+  <xs:element name="oltpcliente" type="tns:oltpcliente" />
+  <xs:element name="pedirInfoSegmentacion" type="tns:pedirInfoSegmentacion" />
+  <xs:element name="pedirInfoSegmentacionResponse" type="tns:pedirInfoSegmentacionResponse" />
+  <xs:element name="pedirPuntos" type="tns:pedirPuntos" />
+  <xs:element name="pedirPuntosResponse" type="tns:pedirPuntosResponse" />
+  <xs:element name="reglasAsociacion" type="tns:reglasAsociacion" />
+  <xs:element name="reglasAsociacionResponse" type="tns:reglasAsociacionResponse" />
+  <xs:element name="remove" type="tns:remove" />
+  <xs:complexType name="remove">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="oltpcliente" type="tns:oltpcliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="oltpcliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cedula" type="xs:decimal" />
+      <xs:element minOccurs="0" name="contrasena" type="xs:string" />
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element minOccurs="0" name="fechanacimiento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="generacion" type="xs:string" />
+      <xs:element minOccurs="0" name="genero" type="xs:string" />
+      <xs:element minOccurs="0" name="nombrecliente" type="xs:string" />
+      <xs:element minOccurs="0" name="puntos" type="xs:integer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listaProductosEst">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nit" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listaProductosEstResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="crearCuentaApp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="cedula" type="xs:string" />
+      <xs:element minOccurs="0" name="pass" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaNacimiento" type="xs:string" />
+      <xs:element minOccurs="0" name="genero" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="crearCuentaAppResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findAll">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="findAllResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:oltpcliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="login">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element minOccurs="0" name="pass" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="loginResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pedirPuntos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pedirPuntosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="asignarPuntos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cedula" type="xs:string" />
+      <xs:element minOccurs="0" name="puntos" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="asignarPuntosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="count">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="countResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="loginApp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element minOccurs="0" name="contrasena" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="loginAppResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findRange">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="range" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findRangeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:oltpcliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPromos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nit" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPromosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="crearReserva">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="cedula" type="xs:string" />
+      <xs:element minOccurs="0" name="numPersonas" type="xs:string" />
+      <xs:element minOccurs="0" name="fecha" type="xs:string" />
+      <xs:element minOccurs="0" name="nit" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="crearReservaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="edit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="oltpcliente" type="tns:oltpcliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pedirInfoSegmentacion">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="pedirInfoSegmentacionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="crearCuenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cedula" type="xs:string" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element minOccurs="0" name="contrasena" type="xs:string" />
+      <xs:element minOccurs="0" name="rol" type="xs:string" />
+      <xs:element minOccurs="0" name="nit" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="crearCuentaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarEstablecimientos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarEstablecimientosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="create">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="oltpcliente" type="tns:oltpcliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listaFuncionarios">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listaFuncionariosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reglasAsociacion">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="reglasAsociacionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="find">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:oltpcliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listaReservas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nit" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listaReservasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="crearPromo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="precio" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaFin" type="xs:string" />
+      <xs:element minOccurs="0" name="nit" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="crearPromoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

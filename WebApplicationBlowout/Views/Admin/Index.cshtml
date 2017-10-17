@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Home Page Admin";
+}
+
+<div class="center-block text-center">
+    <h1><img src="@Url.Content("~/Imagenes/admin.png")"width="200px" height="200px" alt="imgf" />
+        <img src="@Url.Content("~/Imagenes/dembow.png")" width="200px" height="200px" alt="imgf" />
+    </h1>
+    <p class="lead">Bienvenido @Session["Nombre"].ToString() administrador de Dembow</p>
+    
+</div>
+
+<div class="row" >
+    <div class="col-md-4">
+        <h2>Segmentación</h2>
+        <p>
+            Analiza las caracteristicas y comportamientos de sus clientes segmentados
+        </p>
+        <p><a class="btn btn-default" @Html.ActionLink("Segmentación", "Segmentacion", "Admin", routeValues: null, htmlAttributes: new { id = "registerLink" }) </a></p>
+       
+    </div>
+    <div class="col-md-4">
+        <h2>Reglas de asociación</h2>
+        <p>Descubre hechos en común dentro de la relación de los datos (compras) que generan sus clientes</p>
+        <p><a class="btn btn-default" @Html.ActionLink("Asociaciones", "ReglasDeAsociacion", "Admin", routeValues: null, htmlAttributes: new { id = "registerLink" }) </a></p>
+ 
+    </div>
+    <div class="col-md-4">
+        <h2>Gestionar Cuenta Operador</h2>
+        <p>Crear, Modificar y eliminar una cuenta Operador para la gestión operativa de su establecimiento</p>
+        <p><a class="btn btn-default"@Html.ActionLink("Operador", "Register", "Admin", routeValues: null, htmlAttributes: new { id = "registerLink" }) </a></p>
+        <p><a class="btn btn-default" @Html.ActionLink("Lista Operadores", "ListaOperadores", "Admin", routeValues: null, htmlAttributes: new { id = "registerLink" }) </a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Gestionar Promociones</h2>
+        <p>Gestiona las Promociones de tu establecimiento</p>
+        <p><a class="btn btn-default" @Html.ActionLink("Crear Promoción", "CrearPromocion", "Admin", routeValues: null, htmlAttributes: new { id = "registerLink" }) </a></p>
+        <p><a class="btn btn-default" @Html.ActionLink("Lista Promociones", "ListaPromociones", "Admin", routeValues: null, htmlAttributes: new { id = "registerLink" }) </a></p>
+    </div>
+</div>
