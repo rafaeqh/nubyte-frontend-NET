@@ -11,6 +11,7 @@ namespace WebApplicationBlowout.Controllers
     {
         private WebServiceBlowout.WebServicePruebaClient serviciosWeb = new WebServiceBlowout.WebServicePruebaClient();
         // GET: Admin
+        //comentario nuevo
         public ActionResult Index()
         {
             return View();
