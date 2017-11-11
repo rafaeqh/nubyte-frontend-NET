@@ -112,8 +112,9 @@ namespace WebApplicationBlowout.Controllers
             var lista = new List<segmentacion>();
             String[] listaWS;
 
-            listaWS = serviciosWeb.pedirInfoSegmentacion();
-            
+            /*listaWS = serviciosWeb.pedirInfoSegmentacion();
+           
+
             Char delimiter =' ';
             for (int i = 0; i < listaWS.Length; i++)
             {
@@ -131,7 +132,7 @@ namespace WebApplicationBlowout.Controllers
                 lista.Add(segmen);
 
             }
-
+            */
             return View(lista);
 
         }
